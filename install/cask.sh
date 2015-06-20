@@ -32,6 +32,5 @@ brew cask install tunnelblick
 brew cask install boxcryptor-classic
 
 echo '---- install following apps manually ----'
-echo 'wunderlist'
 echo 'Pomodoro Timer'
-echo 'Sublime Text 3'
+echo 'RescueTime'

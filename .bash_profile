@@ -49,6 +49,3 @@ PATH=$PATH:$HOME/.composer/vendor/bin
 #Set default GO environmet
 export GOPATH=$HOME/Documents/dev/goprojects
 export PATH=$GOPATH/bin:$PATH
-
-#Add Sublime as default EDITOR
-#export EDITOR="subl"
