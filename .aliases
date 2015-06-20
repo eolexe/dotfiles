@@ -1,0 +1,32 @@
+#Aliases and functions that make life easier
+alias ll='ls -lGh --color=auto'
+alias la='ls -lGh --color=auto'
+alias ls='ls -G --color=auto'
+alias tcpd8080="sudo tcpdump -s 0 -A -i lo0 'tcp port 8080 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
+alias untar='tar zxvf'
+
+
+####### Redis #######
+alias redis.watch.keyscount='watch redis-cli dbsize'
+####### END Redis #######
+
+
+####### Rabbit #######
+alias rabbit.watch.queues='watch -n1 "rabbitmqadmin list queues vhost name node messages message_stats.publish_details.rate"'
+####### END Rabbit #######
+
+
+####### SVN #######
+alias svn.current.url='svn info | grep URL'
+alias svn.current.branch='svn info | sed -n "/URL:/s/.*\///p"'
+alias svn.repository.root=''
+alias svn.log.last5='svn log --limit 5'
+alias svn.log.revision.details='svn log -vr' #parameter: revision number
+####### SVN END #######
+
+
+####### AWS #######
+# alias aws-ssh='ssh -i /Users/eolexe/Dropbox/awskeypair/gopagoci.pem ubuntu@176.34.188.208'
+# alias aws-mount='sshfs ubuntu@176.34.188.208:/ /Volumes/dev.mac/ci'
+# alias aws-umount='umount -f /Volumes/dev.mac/ci'
+####### END AWS #######

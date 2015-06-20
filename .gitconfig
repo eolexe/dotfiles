@@ -1,0 +1,59 @@
+[user]
+	name = Max Titov
+	email = eolexe@gmail.com
+
+[github]
+  user = eolexe
+
+[core]
+  mergeoptions = --no-ff --no-commit
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore_global
+
+[alias]
+  st = status
+  s  = status -s
+  aa = add --all
+  c = commit
+  br = branch
+  co = checkout
+  cp = cherry-pick
+  diffc = diff --cached
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
+  ign = ls-files -o -i --exclude-standard
+        last = cat-file commit HEAD
+
+[color]
+  ui = true
+
+[color "diff"]
+  meta = yellow
+  frag = cyan
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
+[color "branch"]
+  current = red bold
+  local = yellow
+  remote = magenta
+
+[color "status"]
+  added = green
+  changed = red
+  untracked = cyan
+
+[difftool "opendiff"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "opendiff"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[format]
+  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+  graph = true

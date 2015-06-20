@@ -1,0 +1,88 @@
+####### PHP #######
+function php.set.debug()
+{
+	export XDEBUG_CONFIG="remote_host=192.168.90.12 idekey=PHPSTORM_MTITOV"
+	#if need to run with specific phpstorm configuration, uncommend following and set appropriate variable
+	#export PHP_IDE_CONFIG="serverName={SERVER NAME IN PHP STORM}"
+}
+
+function php.unset.debug()
+{
+	unset XDEBUG_CONFIG
+}
+
+####### END PHP #######
+
+
+#@todo remove cd and fix problem with creating symlink
+function workspace.create()
+{	
+	if [ -z "$1" ]
+        then
+        	echo "Provide workspace name, for example ticket number"
+        else
+        	rm -rf "~/Documents/workspaces/$1"
+        	cd ~
+			mkdir -p Documents/workspaces/$1
+			cd ~/Documents/workspaces/$1
+			# rm -f ~/Desktop/$1
+			# cd ~
+			# ln -s "~/Documents/workspaces/$1/" "$1"
+			# cd ~/Desktop
+			# ln -s "~/Documents/workspaces/$1/" "$1"
+    fi
+}
+
+function workspace.list()
+{
+	ls -1 ~/workspaces/
+}
+
+function workspace.open()
+{
+	if [ -z "$1" ]
+        then
+        	echo "Provide workspace name, for example ticket number"
+        else	
+        	cd ~/Documents/workspaces/$1
+    fi
+}
+
+function workspace.delete()
+{
+	if [ -z "$1" ]
+        then
+        	echo "Provide workspace name, for example ticket number"
+        else	
+        	rm -rf ~/Documents/workspaces/$1
+        	rm ~/$1
+    fi
+}
+
+
+####### MYSQL #######
+
+function mysql-droptables()
+{
+	echo 'uncoment and check the function code'
+	# MUSER="username"
+	# MPASS="password"
+	# MDB="database"
+	# HST="10.10.10.*"
+
+	# Detect paths
+	# MYSQL=$(which mysql)
+	# AWK=$(which awk)
+	# GREP=$(which grep)
+
+	# TABLES=$($MYSQL -h $HST --user=$MUSER --password=$MPASS $MDB -e 'show tables' | $AWK '{ print $1}' | $GREP -v '^Tables' )
+
+	# for t in $TABLES
+	# do
+	#         echo "Deleting $t table from $MDB database..."
+	#         $MYSQL -h $HST --user=$MUSER --password=$MPASS $MDB -e "SET FOREIGN_KEY_CHECKS = 0; drop table $t; SET FOREIGN_KEY_CHECKS = 1;"
+	# done
+}
+
+
+####### END MYSQL #######

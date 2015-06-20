@@ -1,0 +1,10 @@
+*~
+.DS_Store
+
+# Rubymine
+.idea
+.bak
+
+Guardfile.local
+Gemfile.local
+Gemfile.local.lock
