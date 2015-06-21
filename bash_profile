@@ -11,7 +11,7 @@ source ~/.functions
 source ~/.exports
 
 #Project specific configs
-source ~/.project.switchboardonline
+source ~/.projects
 
 #phpbrew
 source ~/.phpbrew/bashrc
