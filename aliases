@@ -15,8 +15,15 @@ alias la='ls -lGh --color=auto'
 alias ls='ls -G --color=auto'
 alias tcpd8080="sudo tcpdump -s 0 -A -i lo0 'tcp port 8080 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
 alias untar='tar zxvf'
-alias dotfiles.edit="subl ~/.dotfiles"
-alias dotfiles.private.edit="subl ~/.dotfiles.private"
+alias edit.dotfiles="subl $HOME/.dotfiles"
+alias edit.dotfiles.private="subl $HOME/.dotfiles.private"
+
+
+####### Quick navigation #######
+alias cd.gosrc.eolexe="cd $GOPATH/src/github.com/eolexe"
+alias cd.dotfiles="cd $HOME/.dotfiles"
+alias cd.dotfiles.private="cd $HOME/.dotfiles.private"
+####### Quick navigation END #######
 
 
 ####### Redis #######
@@ -29,6 +36,7 @@ alias rabbit.watch.queues='watch -n1 "rabbitmqadmin list queues vhost name node 
 ####### END Rabbit #######
 
 
+
 ####### SVN #######
 alias svn.current.url='svn info | grep URL'
 alias svn.current.branch='svn info | sed -n "/URL:/s/.*\///p"'
@@ -36,6 +44,9 @@ alias svn.repository.root=''
 alias svn.log.last5='svn log --limit 5'
 alias svn.log.revision.details='svn log -vr' #parameter: revision number
 ####### SVN END #######
+
+
+
 
 
 ####### AWS #######
