@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Set number of possible open files in paralel
+ulimit -n 10000
+
 #Set default editor
 export EDITOR='vi'
 
@@ -23,7 +26,16 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 #Set default GO environmet
 export GOPATH=$HOME/Documents/dev/goprojects
+export PATH=$GOPATH:$PATH
 export PATH=$GOPATH/bin:$PATH
 
 #Add composer bin globaly (PHP)
 #export PATH=$PATH:$HOME/.composer/vendor/bin
+
+#load php7 from homebrew
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+
+
+#load nvm
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"

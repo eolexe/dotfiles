@@ -17,9 +17,11 @@ alias tcpd8080="sudo tcpdump -s 0 -A -i lo0 'tcp port 8080 and (((ip[2:2] - ((ip
 alias untar='tar zxvf'
 alias edit.dotfiles="subl $HOME/.dotfiles"
 alias edit.dotfiles.private="subl $HOME/.dotfiles.private"
+alias git=hub
 
 
 ####### Quick navigation #######
+alias cd.goprojects="cd $HOME/Documents/dev/goprojects"
 alias cd.gosrc.eolexe="cd $GOPATH/src/github.com/eolexe"
 alias cd.dotfiles="cd $HOME/.dotfiles"
 alias cd.dotfiles.private="cd $HOME/.dotfiles.private"
@@ -45,6 +47,10 @@ alias svn.log.last5='svn log --limit 5'
 alias svn.log.revision.details='svn log -vr' #parameter: revision number
 ####### SVN END #######
 
+
+###### Fix PopCornTime ######
+alias fix.popcorn='rm -Rfv ~/Library/Application\ Support/Popcorn-Time/IndexedDB/'
+###### Fix PopCornTime END ######
 
 
 

@@ -51,13 +51,20 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh.custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew brew-cask go)
 
-source ~/.aliases
-source ~/.functions
 source ~/.exports
 source ~/.projects #project specific configs
+source ~/.aliases
+source ~/.functions
 
 [[ -s "$HOME/.phpbrew/bashrc" ]]  && source "$HOME/.phpbrew/bashrc" # Load phpbrew
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm" # Load gvm – golang version manager
+
 
 
 source $ZSH/oh-my-zsh.sh
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
